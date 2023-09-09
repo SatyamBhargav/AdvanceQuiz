@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  const WelcomeScreen(this.newscreen, {super.key});
+
+  final Function() newscreen;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,9 @@ class WelcomeScreen extends StatelessWidget {
             height: 30,
           ),
           TextButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                newscreen();
+              },
               icon: const Icon(
                 Icons.arrow_forward,
                 color: Colors.white,
